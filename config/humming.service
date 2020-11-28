@@ -1,0 +1,12 @@
+[Unit]
+Description=humming daemon
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/backend_dist
+ExecStart=/usr/bin/java -jar -Dspring.profiles.active=dev /backend_dist/humminginside-0.0.2-SNAPSHOT.jar
+
+[Install]
+WantedBy=multi-user.target
